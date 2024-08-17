@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signin/out</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  html {
+    height: 100%;
+    background: linear-gradient(135deg, #ffecd2 , #fcb69f);
+  }
+
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 500px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+  }
+
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #8a0909;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .login-box .user-box {
+    position: relative;
+  }
+
+  .login-box .user-box input {
+    width: 100%;
+    padding: 15px 0;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 4px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus~label,
+  .login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #000000;
+    font-size: 22px;
+  }
+
+  .login-box form a {
+   position: absolute;
+   top: 65%;
+   left: 60%;
+    display: inline-block;
+    padding: 10px 20px;
+    color:rgb(0, 0, 0);
+    font-size: 18px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    font-weight:bold;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .login-box form a:hover{
+    text-decoration: underline;
+    text-decoration-color: #000000;
+    text-decoration-thickness: 3px;
+   
+  }
+  #button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn1 {
+    position: absolute;
+    top: 120px;
+    width: 200px;
+    height: 45px;
+    font-size: 22px;
+    color: #8a0909;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 8px;
+    border: 2px solid black;
+  }
+
+  .btn1:hover {
+    background-color: transparent;
+  }
+  p {
+    margin-top: 39%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+margin-left: -25%;
+}
+p.text {
+    font-size: 18px;
+    position: absolute;
+    top:10%;
+}
+
+</style>
+
+<body>
+  <!--Login From-->
+  <div class="from-wrapper">
+  <div class="login-box" id="Loginfrom">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <input type="text"  required="">
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input type="password" required>
+        <label>Password</label>
+        <div id="button">
+          <button class="btn1" type="submit">Login</button>
+
+          <p>Don't have an account ?</p> <a class="text" href="loginform.html" id="switchToSignup">Sign Up</a>
+     </div>
+  </div>
+      </div>
+    </form>
+  </div>
+  <!--SignUp Form-->
+            <div class="form" id="signupForm" style="display:none;">
+              <h2>Sign Up</h2>
+              <form>
+                  <div class="input">
+                      <input type="text" required>
+                      <label>Name</label>
+                    </div>
+                  <div class="input">
+                      <input type="email"  required>
+                    <label>Email</label>
+                    </div>
+                  <div class="input">
+                      <input type="password" required>
+                    <label>Password</label>
+                    </div>
+                  <button type="submit" class="btn2" >Sign Up</button>
+                  <p>Already have an account? <a href="loginform.html" id="switchToLogin">Login</a></p>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+
+<script>
+    document.getElementById('switchToSignup').addEventListener('click', function(event) {
+            // event.preventDefault();
+            document.getElementById('Loginform').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        });
+
+        document.getElementById('switchToLogin').addEventListener('click', function(event) {
+            // event.preventDefault();
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('Loginform').style.display = 'block';
+        });
+    </script>
+</script>
+</body>
+<script src="app.js" type="module"></script>
+
+</html>
